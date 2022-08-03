@@ -1,4 +1,4 @@
-from calculator_factories import make_root, make_display, make_buttons, make_label
+from calculator_factories import make_root, make_display, make_label, make_buttons
 from calculator_class import Calculator
 
 

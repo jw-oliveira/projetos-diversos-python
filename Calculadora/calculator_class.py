@@ -42,7 +42,7 @@ class Calculator:
                     
                 if button_text == '=':
                     button.bind('<Button-1>', self.calculate)
-                    button.config(bg='#006494', activebackground='#247ba0', fg='#fff')
+                    button.config(bg='#006494', activebackground='#247ba0', fg='#ffffff')
                     
                     
     def _config_display(self):
