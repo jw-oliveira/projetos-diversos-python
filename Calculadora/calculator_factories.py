@@ -57,7 +57,7 @@ def make_buttons(root) -> List[List[tk.Button]]:
                 pady=40, width=1, background='#777777', bd=0,
                 cursor='hand2', highlightthickness=0,
                 highlightcolor='#ccc', highlightbackground='#ccc',
-                activebackground='#adadad', activeforeground='#fff',
+                activebackground='#adadad', activeforeground='#ffffff',
                 fg='#fff'
             )
             button_row.append(btn)

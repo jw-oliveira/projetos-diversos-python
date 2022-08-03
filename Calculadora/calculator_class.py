@@ -22,6 +22,7 @@ class Calculator:
         self._config_display()
         self.root.mainloop()
 
+
     def _config_buttons(self):
         buttons = self.buttons
         for row_values in buttons:
@@ -44,7 +45,6 @@ class Calculator:
                     button.config(bg='#006494', activebackground='#247ba0', fg='#fff')
                     
                     
-
     def _config_display(self):
        self.display.bind('<Return>', self.calculate)
        self.display.bind('<KP_Enter>', self.calculate)

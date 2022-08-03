@@ -1,4 +1,4 @@
-from calculator_factories import make_root, make_display, make_label, make_buttons
+from calculator_factories import make_root, make_display, make_buttons, make_label
 from calculator_class import Calculator
 
 
@@ -9,7 +9,7 @@ def main():
     buttons = make_buttons(root)
     calculator = Calculator(root, label, display, buttons)
     calculator.start()
-    
+
 
 if __name__ == '__main__':
     main()
