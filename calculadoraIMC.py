@@ -80,12 +80,12 @@ class Application:
             peso = float(self.peso.get())
             self.message1['text'] = ''                
         except:
-            self.message1['text'] = 'ERRO! Valor do peso inválido.'       
+            self.message1['text'] = 'Erro! Valor do peso inválido.'       
         try:
             altura = float(self.altura.get())
             self.message2['text'] = ''
         except:
-            self.message2['text'] = 'ERRO! Valor da altura inválido.'            
+            self.message2['text'] = 'Erro! Valor da altura inválido.'            
 
         imc = peso / (altura * altura)
             
