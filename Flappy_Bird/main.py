@@ -185,6 +185,6 @@ def desenhar_tela(tela, passaros, canos, chao, pontos):
     pygame.display.update()
 
 def main():
-    
-
-    
+    passaros = [Passaro(230, 350)]
+    chao = Chao(730)
+    canos = [Cano(700)]    
