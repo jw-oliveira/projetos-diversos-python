@@ -136,10 +136,55 @@ class Cano:
         distancia_topo = (self.x - passaro.x, self.pos_topo - round(passaro.y))
         distancia_base = (self.x - passaro.x, self.pos_base - round(passaro.y))
 
+        topo_ponto = passaro_mask.overlap(topo_mask, distancia_topo)
+        base_ponto = passaro_mask.overlap(base_mask, distancia_base)
 
-
-    
+        if base_ponto or topo_ponto:
+            return True
+        else:
+            return False   
 
 
 class Chao:
-    pass
+    VELOCIDADE = 5
+    LARGURA = IMAGEM_CHAO.get_width()
+    IMAGEM = IMAGEM_CHAO
+
+
+    def __init__(self, y):
+        self.y = y
+        self.x1 = 0
+        self.x2 = self.LARGURA
+
+
+    def mover(self):
+        self.x1 -= self.VELOCIDADE
+        self.x2 -= self.VELOCIDADE
+
+        if self.x1 + self.LARGURA < 0:
+            self.x1 = self.x1 + self.LARGURA
+        if self.x2 + self.LARGURA < 0:
+            self.x2 = self.x2 + self.LARGURA
+
+
+    def desenhar(self, chao):
+        tela.blit(self.IMAGEM, (self.x1, self.y))
+        tela.blit(self.IMAGEM, (self.x2, self.y))
+
+
+def desenhar_tela(tela, passaros, canos, chao, pontos):
+    tela.blit(IMAGEM_BACKGROUND, (0, 0))
+    for passaro in passaros:
+        passaro.desenhar(tela)
+    for cano in canos:
+        cano.desenhar(tela)
+
+    texto = FONTE_PONTOS.render(f"PONTUAÇÃO: {pontos}", 1, (255, 255, 255))
+    tela.blit(texto, (TELA_LARGURA - 10 - texto.get.width()))
+    chao.desenhar(tela)
+    pygame.display.update()
+
+def main():
+    
+
+    
