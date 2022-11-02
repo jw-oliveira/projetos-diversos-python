@@ -29,3 +29,10 @@ cor = str(input('Cor: '))
 Cachorro.cadastraCachorro(nome, raca, peso, cor)
 
 cachorros[2].apresentar()
+
+cachorro1 = Cachorro("Toby", "Boxer", 30, "Marrom")
+cachorro2 = Cachorro("Lupy", "Golden", 25, "Preto")
+
+cachorro2.apresentar()
+cachorro2.mudarNome("Lulu")
+cachorro2.apresentar()
