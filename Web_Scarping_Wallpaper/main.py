@@ -22,7 +22,7 @@ def find_page(url):
 
 
 def export_to_txt(list_urls):
-    with open(r'/Web_Scarping_Wallpaper/download_list.txt', 'w') as fp:
+    with open(r'C:/Web_Scarping_Wallpaper/download_list.txt', 'w') as fp:
         for link in list_urls:
             # write each item on a new line
             fp.write("%s\n" % link)
@@ -32,18 +32,3 @@ url = str(input('Digite a URL: '))
 
 find_page(url)
 export_to_txt(individual_pages)
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
