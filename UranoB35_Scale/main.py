@@ -39,5 +39,5 @@ metadata.create_all()
 for _t in metadata.tables:
    print("Table: ", _t)
 
-
+print('teste')
 
