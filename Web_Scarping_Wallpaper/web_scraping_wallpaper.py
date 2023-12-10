@@ -31,5 +31,6 @@ def export_to_txt(list_urls):
 first = int(input('Nº da primeira página:  '))
 last = int(input('Nº da última página: '))
 
+
 create_file(first, last)
 export_to_txt(individual_pages)
