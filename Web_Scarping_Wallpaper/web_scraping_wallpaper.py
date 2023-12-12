@@ -1,11 +1,12 @@
 import requests
+import re
 from bs4 import BeautifulSoup as bs
 
 individual_pages = []
 
 
 def title():
-    print(f'{" DOWNLOADER DO SITE HDCARWALLPAPERS.COM ":=^50}')
+    print(f'{" LINK GENERATOR - HDCARWALLPAPERS.COM ":=^50}')
     first_page = int(input('Digite o número da primeira página: '))
     last_page = int(input('Digite o número da última página: '))
     return first_page, last_page
@@ -18,15 +19,10 @@ def create_links(pages):
         soup = bs(r.content, features='html.parser')
         image_names = soup.find_all('em1')
 
-        for cont in range(0, len(image_names)):
-            link = str(image_names[cont]).replace('<em1>', '').lower()
-            link = link.replace('</em1>', '')
-            link = link.replace(' ', '_')
-            link = link.replace('.', '_')
-            link = link.replace('-', '_')
-            link = f'https://www.hdcarwallpapers.com/walls/{link}-HD.jpg'
-
-            individual_pages.append(link)
+        for name in image_names:
+            generate = re.sub(r'<em1>|</em1>', '', re.sub(r'\s+|-|\.', '_', str(name).lower()))
+            generated_link = f'https://www.hdcarwallpapers.com/walls/{generate}-HD.jpg'
+            individual_pages.append(generated_link)
 
 
 def export_to_txt(list_urls):
